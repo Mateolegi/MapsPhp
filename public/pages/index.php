@@ -1,5 +1,6 @@
 <?php 
 	include_once('templates/header_template.php');
+	include_once('../../app/Controller/posicionesController.php');
 ?>
 <link rel="stylesheet" href="../styles/styles.css">
  <title>Lorem ipsum.</title> 
