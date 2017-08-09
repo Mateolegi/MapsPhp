@@ -1,16 +1,19 @@
 <?php 
+extract($_REQUEST);
+include_once($_SERVER["DOCUMENT_ROOT"].'/maps/app/Dao/posicionesDao.php');
 
-include_once('../Dao/posicionesDao.php');
-/**
-* 
-*/
-class PosicionesController{
-
-	public static function insertPosition(){
-		$objPosition = new Posiciones();
-		$objPosition->setLat(1234.5);
-		$objPosition->setLng(6789.10);
-	}
-
+if ( !empty( $consultar ) ) {
+	insertPosition( $lat, $lng);
 }
+
+function insertPosition( $lat , $lng ){
+
+		$objPosition = new Posiciones();
+		$objPosition->setLat($lat);
+		$objPosition->setLng($lng);
+		
+		$resultado = PosicionesDao::createPosition($objPosition);
+}
+
+
 

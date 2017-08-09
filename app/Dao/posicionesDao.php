@@ -1,22 +1,16 @@
 <?php 
+include_once($_SERVER["DOCUMENT_ROOT"]."/maps/app/db/db_connection.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/maps/app/Entities/posiciones.php");
 
-include_once("../Db/db_connection.php");
-include_once("../Entities/posiciones.php");
-/**
-* 
+/** 
+*	this class manage the entire info of the entity Posicion.
 */
 class PosicionesDao extends Connection{
-	protected $cnx = null;
-
-	public static function getConnection(){
-		$this->$cnx = Connection::connect();
-	}
-
 
 	public static function createPosition($posicion){
-		// $query = "INSERT INTO positions (lat, lng) VALUES ($posicion->lat,$posicion->lng)";
-		echo $posicion->lat. "<br>". $posicion->lng;
-
+		$cnx = Connection::connect();
+		$sql = "INSERT INTO positions ( lat , lng ) VALUES ( {$posicion->getLat() } , {$posicion->getLng() } ) " ;
+		return $cnx->query($sql);
 	} 
 
 }
