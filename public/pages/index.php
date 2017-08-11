@@ -1,6 +1,6 @@
 <?php 
-	include_once($_SERVER["DOCUMENT_ROOT"].'/maps/public/pages/templates/header_template.php');
-	include_once($_SERVER["DOCUMENT_ROOT"].'/maps/app/Controller/posicionesController.php');
+	include_once($_SERVER["DOCUMENT_ROOT"].'/MapsPhp/public/pages/templates/header_template.php');
+	include_once($_SERVER["DOCUMENT_ROOT"].'/MapsPhp/app/Controller/posicionesController.php');
 ?>
 <link rel="stylesheet" href="../styles/styles.css">
 <title>Google Maps</title> 
