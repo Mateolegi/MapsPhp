@@ -5,16 +5,18 @@ class Connection {
 	private const host = "localhost";
 	private const user = "root";
 	private const password = "";
+	private $connection;
 
-	public static function connect (){
+	function __construct() {
 		try {
-			$cn =  new PDO("mysql:host=".self::host.";dbname=".self::dbname, self::user, self::password);  
-			return $cn;
-
+			$this->connection =  new PDO("mysql:host=".self::host.";dbname=".self::dbname, self::user, self::password);  
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
 	}
+
+	public function getConnection() {
+		return $this->connection;
+	}
+	
 }
-
-

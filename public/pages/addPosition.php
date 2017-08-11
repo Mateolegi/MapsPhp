@@ -1,6 +1,14 @@
 <?php 
 	include_once($_SERVER["DOCUMENT_ROOT"].'/MapsPhp/public/pages/templates/header_template.php');
-	include_once($_SERVER["DOCUMENT_ROOT"].'/MapsPhp/app/Controller/posicionesController.php');
+	include_once($_SERVER["DOCUMENT_ROOT"].'/MapsPhp/app/Controller/PosicionesController.php');
+	
+	$pos = null;
+
+	if (!empty($_POST)) {
+		$posController = new PosicionesController();
+		$pos = $posController->insertPosition($_POST["lat"], $_POST["lng"]);
+	}
+
  ?>
  <link rel="stylesheet" href="../styles/addPosition.css">
 <body>
@@ -9,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-6 col-sm-12">
 
-				<form method="post" action="../../app/Controller/posicionesController.php" >
+				<form method="post" action="addPosition.php" >
 
 					<div class="form-group row">
 						<div class="col-sm-10">
@@ -35,6 +43,8 @@
 
 			<div class="col-md-6 col-sm-12">
 				<h2>Here is the result</h2>
+				<?= $pos ?: ""  ?>
+
 			</div><!-- End result form -->
 
 		</div><!-- </Form row> -->

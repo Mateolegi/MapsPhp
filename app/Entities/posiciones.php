@@ -14,7 +14,6 @@ class Posiciones{
 
     public function setLat($lat){
         $this->lat = $lat;
-        return $this;
     }
 
     public function getLng(){
@@ -23,6 +22,6 @@ class Posiciones{
 
     public function setLng($lng){
         $this->lng = $lng;
-        return $this;
     }
 }
+

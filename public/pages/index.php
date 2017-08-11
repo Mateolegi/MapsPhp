@@ -8,7 +8,7 @@
 <body>
 	<div class="jumbotron ">
 		<div class="container text-center">
-			<h1 class="display-3">Heat Map by Google</h1>
+			<h1 class="display-3">Heat Map By Alex</h1>
 			<p class="lead">this is a simple test with google maps api and php</p>
 		</div>
 	</div>
