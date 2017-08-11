@@ -1,0 +1,24 @@
+{
+    "name": "mateo.leal/maps-php",
+    "type": "project",
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "Mateo Leal",
+            "email": "mateolegi@gmail.com"
+        },
+        {
+            "name": "Johan Higuita",
+            "email": "alexius9000@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phroute/phroute": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Server\\": "server/"
+        }
+    }
+}

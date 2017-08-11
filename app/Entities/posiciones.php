@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * This class represent the entity of Posiciones

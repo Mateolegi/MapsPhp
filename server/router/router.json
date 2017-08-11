@@ -1,0 +1,20 @@
+[
+  {
+    "method": "GET",
+    "uri": "/",
+    "response": "/welcome.php",
+    "routeType": "web"
+  },
+  {
+    "method": "GET",
+    "uri": "/home",
+    "response": "/index.php",
+    "routeType": "web"
+  },
+  {
+    "method": "GET",
+    "uri": "/test",
+    "response": "/index.php",
+    "routeType": "web"
+  }
+]
