@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" 
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+		  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
+		  crossorigin="anonymous">
+	<link rel="stylesheet" href="http://localhost/public/styles/styles.css">
+	<title>Google Maps</title>
+</head>
+<body>
+	<div class="jumbotron ">
+		<div class="container text-center">
+			<h1 class="display-3">Heat Map By Alex</h1>
+			<p class="lead">this is a simple test with google maps api and php</p>
+			<a href="addposition.html">Add Position</a>
+		</div>
+	</div>
+	<div class="canvas"  id="canvas"></div>
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://localhost/public/js/style.js"></script>
+	<!-- Google maps heatmap  -->
+	<script src ="http://localhost/public/js/initMap.js"></script>
+	<script type="text/javascript" 
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJD3m3j4DTAKHC71Kr1KlNJRNB1IPp9RU&libraries=visualization&callback=initMap">
+	</script>
+</body>
+</html>
