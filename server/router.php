@@ -1,17 +1,17 @@
 <?php
 
 $router->get('/', function() {
-	return view('/welcome.php');
+	return view('/index.html');
 });
 
-$router->add('/*.', function() {
-	// 404
+$router->post('/location/new', function() {
+	$latitude = $_POST['latitude'];
+	$longitude = $_POST['longitude'];
+	$controller = new App\Controller\PosicionesController;
+	$controller->insertPosition($latitude, $longitude);
 });
 
-// $router->add("/".'(\\/)(public)(\\/)((?:[a-z][a-z]+))(\\/)((?:[a-z][a-z]+))(\\.)((?:[a-z][a-z]+))'."/is", function() {
-// 	return view()
-// });
-
-$router->add('/public(\\/)([a-zA-Z]+)', function($path) {
-	return view($path);
+$router->add('/.*', function () {
+    header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+    echo '<h1>404 - El sitio solicitado no existe</h1>';
 });

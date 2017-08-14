@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-namespace App\DAO\Posiciones;
+namespace App\DAO;
 
 use App\Database\Connection;
-use App\Model\Posicion;
+use App\Model\Position;
 
-/** 
+/**
 *	this class manage the entire info of the entity Posicion.
 */
 class Posiciones {
@@ -29,7 +29,7 @@ class Posiciones {
 			return false;
 		}
 		return true;
-	} 
+	}
 
 	public  function searchPosition() {
 		$sql = "SELECT * FROM positions";
@@ -37,7 +37,7 @@ class Posiciones {
 	}
 
 	public function positionExist($lat, $lng) {
-		$sql = "SELECT * FROM positions WHERE  lat = '{$lat}' AND lng = '{$lng}'";
+		$sql = "SELECT * FROM positions WHERE lat = '{$lat}' AND lng = '{$lng}'";
 		$sql =  $this->connection->prepare($sql);
 		$sql->execute();
 		return $sql ->rowCount() > 0;

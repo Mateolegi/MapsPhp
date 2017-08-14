@@ -1,5 +1,5 @@
 <?php
-namespace Router;
+namespace Server\Router;
 
 class Router {
 
@@ -13,7 +13,7 @@ class Router {
         $path = substr($path, strlen($base_path));
         $this->path = $path;
     }
-    
+
     public function all($expr, $callback, $methods = null) {
         $this->routes[] = new Route($expr, $callback, $methods);
     }
@@ -57,7 +57,7 @@ class Router {
         }
         return $this->base_path . $path;
     }
-    
+
     public function redirect($from_path, $to_path, $code = 302) {
         $this->all($from_path, function () use ($to_path, $code) {
             http_response_code($code);

@@ -1,5 +1,5 @@
 <?php
-namespace Router;
+namespace Server\Router;
 
 class RouteNotFoundException extends \Exception {
 

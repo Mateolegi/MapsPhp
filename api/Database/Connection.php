@@ -1,23 +1,32 @@
-<?php 
+<?php
 
-namespace App\Database\Connection;
+namespace App\Database;
 
 class Connection {
-	private const dbname = "heatmap";
-	private const host = "localhost";
-	private const user = "root";
-	private const password = "1215	";
+	private $name = "heatmap";
+	private $host = "localhost";
+	private $user = "root";
+	private $pass = "1215	";
 	private $connection;
+
+	function getCredentials()	{
+		$arr = \parse_ini_file('../../.env', true);
+		$this->name = $arr['database']['name'];
+		$this->host = $arr['database']['host'];
+		$this->user = $arr['database']['user'];
+		$this->pass = $arr['database']['pass'];
+	}
 
 	public function getConnection() {
 		$this->connection = null;
+		$this->getCredentials();
 		try {
-			$this->connection = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user, $this->password);
-			$this->connection->exec("set names utf8");  
+			$this->connection = new PDO("mysql:host=".$this->host.";dbname=".$this->name, $this->user, $this->pass);
+			$this->connection->exec("set names utf8");
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
 		return $this->connection;
 	}
-	
+
 }
