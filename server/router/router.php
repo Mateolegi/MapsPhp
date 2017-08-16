@@ -1,5 +1,6 @@
 <?php
-namespace Server\Router;
+include_once 'RouteNotFoundException.php';
+include_once 'Route.php';
 
 class Router {
 

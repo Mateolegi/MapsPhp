@@ -4,7 +4,7 @@
 * Connection to the database
 */
 class Database {
-	
+
 	private $host = 'localhost';
 	private $name = 'heatmap';
 	private $user = 'root';
@@ -21,5 +21,9 @@ class Database {
 			echo "Connection error: " . $e->getMessage();
 		}
 		return $this->conn;
+	}
+
+	protected function getCredentials() {
+		$env = parse_ini_file('../.env', true);
 	}
 }

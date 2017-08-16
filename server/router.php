@@ -4,11 +4,27 @@ $router->get('/', function() {
 	return view('/index.html');
 });
 
-$router->post('/location/new', function() {
-	$latitude = $_POST['latitude'];
-	$longitude = $_POST['longitude'];
-	$controller = new App\Controller\PosicionesController;
-	$controller->insertPosition($latitude, $longitude);
+$router->post('/position/create', function() {
+	include_once 'api/position/create.php';
+});
+
+$router->get('/position', function() {
+	include_once 'api/position/read.php';
+});
+
+$router->get('/position/([0-9])', function($id) {
+	$_GET['id'] = $id;
+	include_once 'api/position/read_one.php';
+});
+
+$router->delete('/position/([0-9])', function($id) {
+	$_GET['id'] = $id;
+	include_once 'api/position/delete.php';
+});
+
+$router->put('/position/([0-9])', function($id) {
+	$_GET['id'] = $id;
+	include_once 'api/position/update.php';
 });
 
 $router->add('/.*', function () {
